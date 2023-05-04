@@ -56,14 +56,14 @@ In order to derive child state from the current state, use the `scope(state:,act
 
 If in any case you are not using the `.init` with a store endpoint, you would need to manually call `setupView` and `setupStore(with:)` method to make it work properly.
 
-```swift
-let store = Store<YourState, YourAction>(
-    initialState: YourState(),
-    reducer: YourReducer()
-)
-let viewStore = ViewStore(store)
-let viewController = YourViewController(viewStore: viewStore)
-present(viewController, animated: true)
-```
+Helpers are available for:
 
-Notice there would be no point creating a `ComposableViewController` with other endpoints than the two mentioned above.
+- Creating a table view cell from a store:
+
+```swift
+let cell = store.makeTableViewCell(
+    from: tableView,
+    withIdentifier: "\(CounterItemListCell.self)",
+    for: indexPath
+)
+```
