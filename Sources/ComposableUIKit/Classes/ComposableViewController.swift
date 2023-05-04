@@ -85,7 +85,7 @@ open class ComposableViewController<State, Action>: UIViewController where State
     }
 
     /// Override this method to update state.
-    open func update(to _: State) {
+    open func update(to state: State) {
         print("State updated!")
     }
 }

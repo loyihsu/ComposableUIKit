@@ -94,7 +94,7 @@ open class ComposableTableViewCell<State, Action>: UITableViewCell where State: 
     }
 
     /// Override this method to update state.
-    open func update(to _: State) {
+    open func update(to state: State) {
         print("State updated!")
     }
 }
