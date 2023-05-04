@@ -52,6 +52,8 @@ To setup your view, when constructing through this endpoint, you can override th
 
 In order to access the current state for uses like providing the current data for `UITableView`, you can use the instance property `state`.
 
+In order to derive child state from the current state, use the `scope(state:,action:)` method. This method would derive a child store from the current store to be used in smaller domains like `ComposibleTableViewCell<State, Action>`. The helpers and overriding points are the same for both.
+
 If in any case you are not using the `.init` with a store endpoint, you would need to manually call `setupView` and `setupStore(with:)` method to make it work properly.
 
 ```swift
