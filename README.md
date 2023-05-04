@@ -67,3 +67,13 @@ let cell = store.makeTableViewCell(
     for: indexPath
 )
 ```
+
+- You can also provide a cell type, it would assume the cell type casted `String` ("\(YourCellType.self)") being the identifier registered for cell reuse.
+
+```swift
+    let cell = store.makeTableViewCell(
+        from: tableView,
+        for: indexPath,
+        cellType: CounterItemListCell.self
+    )
+```
